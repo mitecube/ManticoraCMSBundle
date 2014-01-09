@@ -207,8 +207,6 @@ class Template
 
     }
 
-
-
     /**
      * Set category
      *

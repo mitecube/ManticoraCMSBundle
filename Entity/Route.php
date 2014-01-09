@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping AS ORM;
  * @ORM\InheritanceType("SINGLE_TABLE")
  * @ORM\DiscriminatorColumn(name="type", type="string")
  * @ORM\DiscriminatorMap(
- *     {"Coldfusion"="Manticora\CMSBundle\Entity\ColdfusionProxy","static"="Manticora\CMSBundle\Entity\StaticRoute"}
+ *     {"static"="Manticora\CMSBundle\Entity\StaticRoute"}
  * )
  */
 class Route

@@ -16,9 +16,21 @@ class TemplateCategory
     private $id;
 
     /**
-     * @ORM\Column(type="string", unique=true, nullable=true)
+     * @ORM\Column(type="string", unique=true, nullable=false)
      */
     private $name;
+
+
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $description;
+
+
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $icon;
 
 
     /**
@@ -104,5 +116,51 @@ class TemplateCategory
     public function getTemplates()
     {
         return $this->templates;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return TemplateCategory
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set icon
+     *
+     * @param string $icon
+     * @return TemplateCategory
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return string 
+     */
+    public function getIcon()
+    {
+        return $this->icon;
     }
 }

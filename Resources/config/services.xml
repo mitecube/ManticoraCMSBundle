@@ -28,6 +28,8 @@
         <service id="manticora_cms.service" class="%manticora_cms.service.class%">
             <argument type="service" id="doctrine.orm.entity_manager" />
             <argument type="service" id="twig" />
+            <argument type="service" id="cache_clearer" />
+            <argument>%kernel.cache_dir%</argument>
         </service>
         <service id="manticora_cms.db" class="%manticora_cms.db.class%">
             <tag name="routing.loader" />

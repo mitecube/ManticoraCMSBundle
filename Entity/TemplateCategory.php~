@@ -16,9 +16,21 @@ class TemplateCategory
     private $id;
 
     /**
-     * @ORM\Column(type="string", unique=true, nullable=true)
+     * @ORM\Column(type="string", unique=true, nullable=false)
      */
     private $name;
+
+
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $description;
+
+
+    /**
+     * @ORM\Column(type="string", unique=true, nullable=true)
+     */
+    private $icon;
 
 
     /**
@@ -72,4 +84,83 @@ class TemplateCategory
     }
 
 
+
+    /**
+     * Add templates
+     *
+     * @param \Manticora\CMSBundle\Entity\Template $templates
+     * @return TemplateCategory
+     */
+    public function addTemplate(\Manticora\CMSBundle\Entity\Template $templates)
+    {
+        $this->templates[] = $templates;
+    
+        return $this;
+    }
+
+    /**
+     * Remove templates
+     *
+     * @param \Manticora\CMSBundle\Entity\Template $templates
+     */
+    public function removeTemplate(\Manticora\CMSBundle\Entity\Template $templates)
+    {
+        $this->templates->removeElement($templates);
+    }
+
+    /**
+     * Get templates
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTemplates()
+    {
+        return $this->templates;
+    }
+
+    /**
+     * Set description
+     *
+     * @param string $description
+     * @return TemplateCategory
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    
+        return $this;
+    }
+
+    /**
+     * Get description
+     *
+     * @return string 
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * Set icon
+     *
+     * @param string $icon
+     * @return TemplateCategory
+     */
+    public function setIcon($icon)
+    {
+        $this->icon = $icon;
+    
+        return $this;
+    }
+
+    /**
+     * Get icon
+     *
+     * @return string 
+     */
+    public function getIcon()
+    {
+        return $this->icon;
+    }
 }
